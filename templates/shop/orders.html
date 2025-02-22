@@ -1,0 +1,40 @@
+{% extends 'base/base-c.html' %}
+
+{% block main %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Orders</h1>
+                <div class="page-nav">
+                    <p><a href="{{ url_for('main.index') }}">Home</a> &nbsp; | &nbsp; <a href="#">Orders</a></p>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <div class="wrapper-form bg-light">
+        <div class="container">
+            {% include 'includes/alerts.html' %}
+            <table class="table table-bordered table-hover table-striped">
+                <thead class="bg-info ">
+                    <tr>
+                        <th>product id</th>
+                        <th>product name</th>
+                        <th>product price</th>
+                        <th>time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                        <tr>
+                            <td>{{ product[0].id }}</td>
+                            <td>{{ product[0].name }}</td>
+                            <td>{{ product[0].price }}</td>
+                            <td>{{ product[1].time.strftime('%B %d, %Y %H:%M') }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock main %}

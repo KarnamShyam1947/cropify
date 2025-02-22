@@ -1,0 +1,54 @@
+{% extends 'base/base.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css' ) }}">
+{% endblock styles %}
+
+{% block main %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Fertilizer Recommendation</h1>
+                <div class="page-nav">
+                    <p><a href="{{ url_for('main.index') }}">Home</a> &nbsp; | &nbsp; <a href="{{ url_for('main.services') }}">Services</a> &nbsp; | &nbsp; <a href="#">Fertilizer</a></p>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <section>
+        <div class="wrapper-form">
+            <form method="post">
+                <h1>Enter details in all fields</h1>
+                <div id="output">
+                    {% if result %}
+                        <p>Best recommended fertilizer is <b class="color-text">{{ result }}</b></p>
+                    {% endif %}
+                </div>
+                <div class="inputs">
+                    <input type="number" min="0" class="form-control" placeholder="Enter value of nitrogen" name="nitrogen">
+                    <input type="number" min="0" class="form-control" placeholder="Enter value of Soil Moisture" name="Moisture">
+                    <input type="number" min="0" class="form-control" placeholder="Enter value of potassium" name="potassium">
+                    <input type="number" min="0" class="form-control" placeholder="Enter value of temp" name="temp">
+                    <input type="number" min="0" class="form-control" placeholder="Enter value of phosphorous" name="phosphorous">
+                    <input type="number" min="0" class="form-control" placeholder="Enter value of humidity" name="humidity">
+                    <select class="form-select " name="soil">
+                        <option selected disabled value="">Select soil type</option>
+    
+                        {% for i, soil in soils %}
+                            <option value="{{ i }}">{{ soil }}</option>
+                        {% endfor %}
+                    </select>
+                    <select class="form-select " name="crop">
+                        <option selected disabled value="">Select crop type</option>
+                        {% for i, crop in crops %}
+                            <option value="{{ i }}">{{ crop }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <input class="btn button btn-white" type="submit" value="Predict">
+            </form>
+        </div>
+    </section>
+
+{% endblock main %} 

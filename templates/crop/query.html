@@ -1,0 +1,29 @@
+{% from "includes/macros/form_utils.html" import render_text_field %}
+{% extends 'base/base-c.html' %}
+
+{% block main %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Login</h1>
+                <div class="page-nav">
+                    <p><a href="{{ url_for('main.index') }}">Home</a> &nbsp; | &nbsp; <a href="#">Raise Query</a></p>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <div class="wrapper-form bg-light">
+        <div class="container">
+            <h1 class="text-center">Raise Query</h1>
+            
+            {% include 'includes/alerts.html' %}
+
+            <form action="" method="post" enctype="multipart/form-data">
+                <input type="text" name="title" class="form-control mb-3" placeholder="Enter your query">
+                <input type="file" name="file" class="form-control mb-3">
+                <input type="submit" class="btn button" value="Add">
+            </form>
+        </div>
+    </div>
+{% endblock main %}

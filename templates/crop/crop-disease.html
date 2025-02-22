@@ -1,0 +1,82 @@
+{% extends 'base/base.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css' ) }}">
+    <style>
+        .solutions {
+            width: 60%;
+            margin: auto;
+            margin-top: 50px;
+        }
+        .solutions ul li, 
+        .solutions h3 {
+            color: white !important;
+        }
+        .solutions ul li {
+            font-size: 18px;
+            font-weight: 400;
+        } 
+        
+        .causes {
+            width: 60%;
+            margin: auto;
+            margin-top: 50px;
+        }
+        .causes ul li, 
+        .causes h3 {
+            color: white !important;
+        }
+        .causes ul li {
+            font-size: 18px;
+            font-weight: 400;
+        } 
+    </style>
+{% endblock styles %}
+
+{% block main %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Crop Disease</h1>
+                <div class="page-nav">
+                    <p><a href="{{ url_for('main.index') }}">Home</a> &nbsp; | &nbsp; <a href="{{ url_for('main.services') }}">Services</a> &nbsp; | &nbsp; <a href="#">Crop Disease</a></p>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <section>
+        <div class="wrapper-form">
+            <form id="form" enctype="multipart/form-data">
+                <h1>Select The image Plant leaf</h1>
+                
+                <label for="files" class="label-btn">Select file</label>
+
+                <input type="file" id="files" name="images" accept="image/*">
+
+                <div id="spinner-div">
+                    <img id="image" src="">
+                    <div class="spinner"></div>
+                    <div id="result">
+                        
+                    </div>
+                </div>
+
+                <input class="btn button btn-white" id="submitBtn" type="submit" value="Predict">
+            </form>
+
+            <div class="solutions">
+                
+            </div>
+            
+            <div class="causes">
+                
+            </div>
+        </div>
+    </section>
+
+    {% block scripts %}
+        <script src="{{ url_for('static', filename='js/predict.js') }}" defer> </script>
+    {% endblock scripts %}
+
+{% endblock main %} 

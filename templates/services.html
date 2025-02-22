@@ -1,0 +1,193 @@
+{% extends 'base/base.html' %}
+
+{% block main %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Services</h1>
+                <div class="page-nav">
+                    <p><a href="{{ url_for('main.index') }}">Home</a> &nbsp; | &nbsp; <a href="#">Services</a></p>
+                </div>
+            </div>
+        </div>  
+    </div>
+    
+    <section>
+        <div class="container mt-5 mb-5">
+            <div class="layer-title text-center">
+                <h2>Cropify <span class="light-text">Services</span></h2>
+                <p>We specialise in intelligent & effective Search and believes in the power of <br /> partnerships to
+                    grow business. We use agronomic machine learning, remote sensing,</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4"> 
+                    <div class="service-box">
+                        <figure class="sb-icon">
+                            <img src="static/images/icons/vegetable-2.svg" alt="">
+                        </figure>
+                        <div class="sb-caption">
+                            <h4>Fertilizer</h4>
+                            <p>This service will recommend you the best fertilizer that we have to use.
+                                You need give values of N, P, K, soil type, crop type, soil mostiure, temparture and humidity</p>
+
+                        <a href="{{ url_for('crop.fertilizer') }}" class="btn button">Fertilizer</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4"> 
+                    <div class="service-box">
+                        <figure class="sb-icon">
+                            <img src="static/images/icons/rice.svg" alt="">
+                        </figure>
+                        <div class="sb-caption">
+                            <h4>Crops</h4>
+                            <p>This service will recommend the best crop to grow, based on your soil and weather conditions. 
+                                which help farmers to make correct dessions </p>
+                            <a href="{{ url_for('crop.crop_recommendation') }}" class="btn button">Crop</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4"> 
+                    <div class="service-box">
+                        <figure class="sb-icon">
+                            <img src="static/images/icons/fruit.svg" alt="">
+                        </figure>
+                        <div class="sb-caption">
+                            <h4>Crop Disease</h4>
+                            <p>This service will predict the disease of palnt/crop and suggests the solution to cure the disease.
+                                it also includes the solution from expects. </p>
+                            <a href="{{ url_for('crop.crop_disease') }}" class="btn button">Crop Disease</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4"> 
+                    <div class="service-box">
+                        <figure class="sb-icon">
+                            <img src="static/images/icons/pig-2.svg" alt="">
+                        </figure>
+                        <div class="sb-caption">
+                            <h4>Weather</h4>
+                            <p>This services will provide the weather forccast for any place in the for 15 day.
+                                it use VisualCrossing api to fetch the information.
+                            </p>
+                            <a href="{{ url_for('crop.weather') }}" class="btn button">Weather</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4"> 
+                    <div class="service-box">
+                        <figure class="sb-icon">
+                            <img src="static/images/icons/tractor-2.svg" alt="">
+                        </figure>
+                        <div class="sb-caption">
+                            <h4>Queries</h4>
+                            <p>If farmer needs any help from experts, then they can use this services to raise the Queries
+                                and get answers </p>
+                            <a href="{{ url_for('query.all_queries') }}" class="btn button">Query</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4"> 
+                    <div class="service-box">
+                        <figure class="sb-icon">
+                            <img src="static/images/icons/farm.svg" alt="">
+                        </figure>
+                        <div class="sb-caption">
+                            <h4>Market</h4>
+                            <p>The former can provide his/her valuable feed back or reach us using this service.
+                                which help us to impove our productivity.
+                            </p>
+                            <a href="/all-products" class="btn button">Market</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ws-wrapper mt-5 mb-5">
+            <div class="row no-gutters">
+                <div class="order-last order-md-3 col-lg-6">
+                    <div class="section-parallax">
+                    </div>
+                </div>
+                <div class="order-first order-md-9 col-lg-6">
+                    <div class="ws-section-content">
+                        <div class="ws-inner-content">
+                            <h2>PRECISION <span class="light-text">AGRICULTURE</span></h2>
+                            <p>Our farm loan products allowing you even further control of your financial success. Our
+                                Business Bureau rating is a testament to how dedicated we are to our customers.</p>
+                            <p>It is a long established fact that a reader will be distracted by the readable content.
+                            </p>
+                            <a class="btn button" href="#" role="button">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <div class="container mt-5 mb-5">
+            <div class="clients-carousel">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="client-box">
+                            <figure class="client-icon">
+                                <img src="static/images/common/client-logo-1.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="client-box">
+                            <figure class="client-icon">
+                                <img src="static/images/common/client-logo-2.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="client-box">
+                            <figure class="client-icon">
+                                <img src="static/images/common/client-logo-3.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="client-box">
+                            <figure class="client-icon">
+                                <img src="static/images/common/client-logo-4.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="client-box">
+                            <figure class="client-icon">
+                                <img src="static/images/common/client-logo-5.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="client-box">
+                            <figure class="client-icon">
+                                <img src="static/images/common/client-logo-6.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="client-box">
+                            <figure class="client-icon">
+                                <img src="static/images/common/client-logo-7.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="client-box">
+                            <figure class="client-icon">
+                                <img src="static/images/common/client-logo-8.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+{% endblock main %}

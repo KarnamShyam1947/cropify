@@ -1,0 +1,25 @@
+{% extends 'base/base-c.html' %}
+
+{% block main %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Add Reply</h1>
+                <div class="page-nav">
+                    <p><a href="#">Home</a> &nbsp; | &nbsp; <a href="#">Add reply</a></p>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <div class="wrapper-form bg-white ">
+        <div class="container">
+            <form action="" method="post">
+                <input type="text" class="form-control" value="{{ title.text }}" readonly>
+                <input type="hidden" name="qid" value="{{ title.id }}">
+                <textarea class="form-control" name="ans" rows="5"></textarea>
+                <input type="submit" class="btn button">
+            </form>
+        </div>
+    </div>
+{% endblock %}

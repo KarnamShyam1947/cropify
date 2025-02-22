@@ -1,0 +1,53 @@
+{% extends 'base/base-c.html' %}
+
+{% block main %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Queries</h1>
+                <div class="page-nav">
+                    <p><a href="#">Home</a> &nbsp; | &nbsp; <a href="#">Queries</a></p>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-between ">
+            <h3>All Queries</h3>
+            {% if session['name'] %}
+                <a href="{{ url_for('crop.former_queries') }}" class="btn button">Add Query</a>
+            {% endif %}
+        </div>
+        <div class="content-blogs">
+            <div class="row hover-effects image-hover">
+
+                {% for query in complete_queries %}
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="blog-thumbnail">
+                            <figure class="bt-img"><a href="#"><img style="height: 300px;" src="{{ query[0].img_url }}" alt=""></a>
+                            </figure>
+                            <div class="bt-caption">
+                                <div class="bt-details">
+                                    <p>{{ query[0].time.strftime('%B %d, %Y') }}</p>
+                                </div>
+                                <h4><a href="/queries-details?qid={{ query[0].id }}">{{ query[0].text }}</a> </h4>
+                                <hr class="bt-separator">
+                                <div class="author">
+                                    <div class="media"> 
+                                        <!-- <img src="images/common/team-avatar.jpg" class="mr-3" alt="...">  -->
+                                        <div class="media-body"> 
+                                        <h5 class="mt-0">{{ query[1].name }}</h5> 
+                                        <p>Farmer</p>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock main %}

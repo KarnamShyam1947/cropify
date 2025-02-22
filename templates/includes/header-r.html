@@ -1,0 +1,35 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container p-0">
+            <a href="{{ url_for('main.index') }}" class="navbar-brand"><img src="static/images/logo2.png" alt=""></a>
+
+            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
+                <span class="menu-icon-bar"></span>
+                <span class="menu-icon-bar"></span>
+                <span class="menu-icon-bar"></span>
+            </button>
+
+            <div id="main-nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li><a href="{{ url_for('main.index') }}" class="nav-item nav-link">HOME</a></li>
+                    <li><a href="{{ url_for('main.about') }}" class="nav-item nav-link">About</a></li>
+                    <li><a href="{{ url_for('main.services') }}" class="nav-item nav-link">Services</a></li>
+                    <li><a href="{{ url_for('main.contact') }}" class="nav-item nav-link">Contact</a></li>
+
+                    {% if session['name'] %}
+                        <li>
+                            <a target="_blank" href="https://mediafiles.botpress.cloud/1c8ce4ee-aab4-4c4c-ad74-73a391bfb937/webchat/bot.html" class="nav-item nav-link">chat bot</a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('auth.logout') }}" class="nav-item nav-link">{{ session['name'] }}</a>
+                        </li>
+                    {% else %}
+
+                        <li><a href="{{ url_for('auth.login') }}" class="nav-item nav-link last-link-item">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</header>

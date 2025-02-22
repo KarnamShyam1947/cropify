@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+form {
+    width: 60%;
+    margin: auto;
+}
+
+form h1 {
+    font-size: 30px;
+    margin: 30px 0;
+    color: white;
+}
+
+.inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.inputs input, 
+.inputs select {
+    height: 40px;
+    font-size: 18px;
+    padding-left: 15px;
+}
+
+option:checked,
+option:hover {
+    color: black;
+    background-color: #EEC344 !important;
+}
+
+input[type=submit] {
+    width: 100%;
+    margin-top: 20px;
+    /* height: 35px; */
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.color-text {
+    font-size: 30px;
+}
+
+#output {
+    margin-top: 20px;
+    text-align: center; 
+    font-size: 25px;  
+}
+
+#output p {
+    font-size: 25px;
+    color: white;
+    font-weight: 700;
+}
+
+#output table {
+    border-collapse: collapse;
+    width: 200px;
+    margin: 0 auto 0 auto;
+}
+
+table td {
+    padding: 5px 30px;
+    border: 2px solid black;
+}
+
+input[type=file] {
+    display: none;
+}
+
+.label-btn {
+    background-color: #EEC344;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 8px 0px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+#image {
+    width: 300px;
+}
+
+#result {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#result p{
+    color: white !important;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+#spinner-div {
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+.spinner {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    padding: 1.4px;
+    background: conic-gradient(#0000 10%,#eec344) content-box;
+    -webkit-mask: repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg),
+         radial-gradient(farthest-side,#0000 calc(100% - 11.5px),#000 calc(100% - 11.5px));
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    animation: spinner-d55elj 1s infinite steps(10);
+ }
+ 
+ @keyframes spinner-d55elj {
+    to {
+       transform: rotate(1turn);
+    }
+ }
+
+@media only screen and (max-width:900px){
+    form {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width:600px){
+    .inputs {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

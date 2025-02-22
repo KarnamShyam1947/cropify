@@ -1,0 +1,38 @@
+{% extends 'base/base-c.html' %}
+
+{% block styles %}
+    <style>
+        input[type=file]::file-selector-button{
+            height: 100%;
+        }
+    </style>
+{% endblock styles %}
+
+{% block main %}
+<div class="pages-hero">
+    <div class="container">
+        <div class="pages-title">
+            <h1>Login</h1>
+            <div class="page-nav">
+                <p><a href="{{ url_for('main.index') }}">Home</a> &nbsp; | &nbsp; <a href="#">Raise Query</a></p>
+            </div>
+        </div>
+    </div>  
+</div>
+
+<div class="wrapper-form bg-light">
+    <div class="container">
+        <h1 class="text-center">Add Product</h1>
+
+        {% include 'includes/alerts.html' %}
+
+        <form action="" method="post" enctype="multipart/form-data">
+            <input type="text" name="p-name" class="form-control mb-3" placeholder="Enter product name">
+            <input type="text" name="p-price" class="form-control mb-3" placeholder="Enter product price">
+            <input type="file" name="img" class="form-control mb-3" >
+            <textarea name="des" class="form-control mb-3" rows="5"></textarea>
+            <input type="submit" value="add" class="btn button">
+        </form>
+    </div>
+</div>
+{% endblock main %}

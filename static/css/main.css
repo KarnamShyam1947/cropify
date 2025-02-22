@@ -1,0 +1,732 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;family=Raleway:wght@100;300;400;600;700;900&amp;display=swap');
+@import url('lib/normalize.css');
+
+
+/*====================================================
+  * Template:   Cropify
+  * Version:    1.0
+  * Author:     QuickDev
+  * Create :    Sept. 5th 2020
+====================================================*/
+
+/*==================================================*/
+             /* [Table of contents] */
+/*==================================================*/
+
+/*	
+    1. RESET.
+    2. COLOR PALETTE.
+    3. TYPOGRAPHY. 
+    4. SPACE AND ALIGMENT. 
+    5. BUTTONS. 
+    6. SCROLLING TOP.
+    7. PRELOADER 
+    8. YOUTUBE POPUP.
+    9. MODAL POPUP.
+    10. MEDIA QUERIES.
+*/
+
+/* =====================================
+   	1. RESET.
+   ===================================== */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body{
+    overflow-x: hidden;
+    text-rendering: optimizeSpeed;
+    background-color: #FFF;
+}
+
+html {
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 1.5;
+}
+
+img{
+  width: 100%;
+}
+
+/* =====================================
+   	2. COLOR PALETTE.
+   ===================================== */
+
+:root {
+  --main-green-color: #3E755F;
+  --main-yellow-color: #EEC344;  
+  --main-dark-color: #333333;  
+  --main-text-color: #737373;  
+  --lg-margin-top: 2rem;    
+  --md-margin-top: 2rem;    
+  --sm-margin-top: 2rem; 
+  --col-lg-m: 2rem;    
+  --col-md-m: 2rem;    
+  --col-sm-m: 2rem;  
+  --col-left-padding: 2rem;    
+}
+
+.fixed-top {
+  margin-top: 45px !important;
+}
+
+/* ===================================== 
+	3. TYPOGRAPHY. 
+   ===================================== */
+  h1, h2, h3, h4, h5, h6, p, ul,ol{
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    font-family: 'Raleway', sans-serif;
+    color: var(--main-dark-color);
+  }
+
+  h1, .h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  h2, .h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  
+  h3, .h3 {
+    font-size: 1.75rem;
+  }
+  
+  h4, .h4 {
+    font-size: 1.5rem;
+  }
+  
+  h5, .h5 {
+    font-size: 1.25rem;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--main-green-color);
+  }
+  
+  h6, .h6 {
+    font-size: 1rem;
+  }
+
+p {
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--main-text-color);
+  font-weight: 400;
+  line-height: 25px;
+}
+
+ul{
+  font-family: 'Open Sans', sans-serif;
+}
+
+@media screen and (min-width: 0px) { 
+    html { 
+        font-size: calc(12px + 6 * ((100vw - 320px) / 680)); 
+    } 
+} 
+@media screen and (min-width: 1200px) { 
+    html { 
+        font-size: 18px; 
+    } 
+}
+
+a {
+    color: var(--main-dark-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+	  color: var(--main-green-color);
+    text-decoration: none;
+}
+
+/*====================================================
+    4. SPACE AND ALIGMENT. 
+  ====================================================*/
+  .mt-5,
+  .my-5 {
+    margin-top: 5rem !important;
+  }
+  
+  .mb-5,
+  .my-5 {
+    margin-bottom: 5rem !important;
+  }
+  
+  .mt-4,
+  .my-4 {
+    margin-top: 3rem !important;
+  }
+  
+  .mb-4,
+  .my-4 {
+    margin-bottom: 3rem !important;
+  }
+
+  .xmt-5{
+    margin-top: 8rem !important;
+  }
+
+  .xmb-5{
+    margin-bottom: 9rem !important;
+  }
+
+/* ===================================== 
+	    5. BUTTONS. 
+   ===================================== */
+   .btn { 
+    display: inline-block; 
+    font-weight: 600; 
+    color: #212529; 
+    text-align: center; 
+    vertical-align: middle; 
+    cursor: pointer; 
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    background-color: transparent; 
+    border: 1px solid transparent; 
+    padding: 8px 28px; 
+    font-size: 1rem; 
+    line-height: 1.5; 
+    border-radius: 0.25rem; 
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; 
+    font-family: 'Open Sans', sans-serif;
+    transition: 0.4s;
+} 
+.btn:focus, .btn.focus { 
+    outline: 0; 
+    box-shadow: none; 
+} 
+.button { 
+    background-color: var(--main-yellow-color); 
+    color: #333; 
+    text-decoration: none; 
+    font-size: 16px; 
+    margin: 4px 2px; 
+} 
+.button:hover { 
+    background-color: var(--main-green-color);
+    color: #FFF; 
+}
+
+.btn-white{
+  background-color: #FFF;
+  color: #333;
+}
+
+.btn-md{
+  font-size: 14px;
+  padding: 4px 12px; 
+}
+
+.btn-sm{
+  font-size: 10px;
+  padding: 4px 12px; 
+  text-transform: uppercase;
+}
+
+.btn-outline{
+  background-color: transparent;
+  border: solid 2px var(--main-yellow-color);
+  color: var(--main-dark-color);
+}
+
+.btn-outline:hover{
+  background-color: var(--main-yellow-color);
+  border: solid 2px var(--main-yellow-color);
+  color: var(--main-dark-color);
+}
+
+.btn-outline-white{
+  background-color: transparent;
+  border: solid 2px #FFF;
+  color: #FFF;
+  padding: 12px 45px !important;
+  font-size: 15px !important;
+}
+
+.btn-outline-white:hover{
+  background-color: var(--main-yellow-color) !important;
+  border: solid 1px var(--main-yellow-color) !important;
+  color: var(--main-dark-color);
+}
+
+/*====================================================
+    6. SCROLLING TOP.
+  ====================================================*/
+  @media only screen and (min-width: 1024px) {
+    main p {
+      font-size: 20px;
+      font-size: 1.25rem;
+    }
+  }
+  
+  .cd-top {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    background: var(--main-yellow-color) url(../images/icons/cd-top-arrow.svg) no-repeat center 50%;
+    visibility: hidden;
+    border-radius: 5px;
+    z-index: 4;
+  }
+  
+  .cd-top.cd-is-visible,
+  .cd-top.cd-fade-out,
+  .no-touch .cd-top:hover {
+    -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+    -moz-transition: opacity .3s 0s, visibility 0s 0s;
+    transition: opacity .3s 0s, visibility 0s 0s;
+  }
+  
+  .cd-top.cd-is-visible {
+    /* the button becomes visible */
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .no-touch .cd-top:hover {
+    background-color: #B4E602;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .cd-top {
+      right: 20px;
+      bottom: 20px;
+    }
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    .cd-top {
+      height: 60px;
+      width: 60px;
+      right: 30px;
+      bottom: 30px;
+    }
+  }
+
+  /*====================================================
+      7. PRELOADER 
+    ====================================================*/
+    #loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1031;
+      background-color: #FFF;
+      z-index: 999999;
+    }
+
+    #loader-wrapper .loader {
+      position: absolute;
+      /*Setting position of element according to the next parent element with position anything other then default*/
+      top: 50%;
+      /*50% down on the parent element*/
+      left: 50%;
+      /*50% right on the parent element*/
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      /*50% of element width (50px) left, 50% of element height (50px) up*/
+      width: 100px;
+      /*Element is 100px wide*/
+      height: 100px;
+      /*Element is 100px tall*/
+      animation: spin .6s linear infinite reverse;
+      /*
+          Animation is using the spin keyframes
+          Animation is 0.8 seconds long
+          Aniamtion tweening/easing is linear (no acceleration)
+          The animation loops forever
+          The animation goes the opposite way than defines
+          */
+    }
+
+    #loader-wrapper .loader .ball {
+      position: absolute;
+      /*Same deal with centering the element like with .loader, but the parent of .ball is .loader*/
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      height: 100%;
+      /*Height is 100% of the parent not 100% of the screen height (that's 100vh)*/
+      -webkit-animation: spin 1s infinite ease-in-out;
+      animation: spin 1s infinite ease-in-out;
+      /*
+          Animation is using the spin keyframes (in the way it is defines)
+          Animation is 1 second long
+          Animation loops forever
+          Animation tweening/easing is ease-in-out, which has symetrical acceleration at the start as at the end
+          */
+      /*Here I am using the selector `:nth-child(n)` to select certain elements*/
+    }
+
+    #loader-wrapper .loader .ball:after {
+      /*Pseudo-class, there is also :before*/
+      position: absolute;
+      /*Pseudoclasses for use as shapes need to be position absolute*/
+      content: '';
+      /*And content defined (Add some text into it)*/
+      background-color: var(--main-yellow-color);
+      /*SCSS variable using the white from line 8*/
+      width: 7px;
+      /*Width 5 pixels*/
+      height: 7px;
+      /*Height 5 pixels*/
+      border-radius: 100%;
+      /*Corners will be rounded into an oval*/
+      top: 0px;
+      /*Put this element at the top of the parent*/
+    }
+
+    #loader-wrapper .loader .ball:nth-child(1) {
+      /*The first .ball in the parent*/
+      -webkit-animation-delay: -0s;
+      animation-delay: -0s;
+    }
+
+    #loader-wrapper .loader .ball:nth-child(2) {
+      -webkit-animation-delay: -0.1s;
+      animation-delay: -0.1s;
+      /*Start the animation 0.1s before*/
+    }
+
+    #loader-wrapper .loader .ball:nth-child(3) {
+      -webkit-animation-delay: -0.2s;
+      animation-delay: -0.2s;
+      /*Start the animation 0.2s before*/
+    }
+
+    #loader-wrapper .loader .ball:nth-child(4) {
+      -webkit-animation-delay: -0.3s;
+      animation-delay: -0.3s;
+    }
+
+    #loader-wrapper .loader .ball:nth-child(5) {
+      -webkit-animation-delay: -0.4s;
+      animation-delay: -0.4s;
+    }
+
+    #loader-wrapper .loader .ball:nth-child(6) {
+      -webkit-animation-delay: -0.5s;
+      animation-delay: -0.5s;
+    }
+
+    #loader-wrapper .loader .ball:nth-child(7) {
+      -webkit-animation-delay: -0.6s;
+      animation-delay: -0.6s;
+    }
+
+    #loader-wrapper .loader .ball:nth-child(8) {
+      -webkit-animation-delay: -0.7s;
+      animation-delay: -0.7s;
+    }
+
+    #loader-wrapper .loader .ball:nth-child(9) {
+      -webkit-animation-delay: -0.8s;
+      animation-delay: -0.8s;
+    }
+
+    #loader-wrapper .loader .ball:nth-child(10) {
+      -webkit-animation-delay: -0.9s;
+      animation-delay: -0.9s;
+      /*I am a fan of negative delays*/
+    }
+
+    @-webkit-keyframes spin {
+
+      /*The keyframes for the animation `spin`*/
+      0% {
+        /*At 0% of the animation whatever elements have these keyframes set as an animation will have these properties*/
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      /*The balls do not change colour because the animation is set to their parent and not themselves*/
+      100% {
+        -webkit-transform: translate(-50%, -50%) rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+
+      /*The keyframes for the animation `spin`*/
+      0% {
+        /*At 0% of the animation whatever elements have these keyframes set as an animation will have these properties*/
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      /*The balls do not change colour because the animation is set to their parent and not themselves*/
+      100% {
+        -webkit-transform: translate(-50%, -50%) rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+    
+ /*====================================================
+      8. YOUTUBE POPUP.
+  ====================================================*/
+  .popup-youtube .video-image {
+    position: relative;
+    display: inline-block;
+  }
+
+  .popup-youtube .video-image img {
+    width: 100%
+  }
+
+  .popup-youtube .video-image:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: transparent url(../img/master/play-button.html) center center no-repeat;
+  }
+
+  .popup-youtube .video-image img a:link {
+    text-decoration: none;
+    color: #FFF;
+  }
+
+  .popup-youtube .video-image img a:visited {
+    text-decoration: none;
+    color: #FFF;
+  }
+
+  .popup-youtube .video-image img a:hover {
+    text-decoration: none;
+    color: #FFF;
+  }
+
+  .popup-youtube .video-image img a:active {
+    text-decoration: none;
+    color: #FFF;
+  }
+/*====================================================
+      9. MODAL POPUP.
+  ====================================================*/
+.modal-box {
+  text-align: center;
+}
+
+.modal-box p {
+  margin: 15px 0px 15px 0px;
+}
+
+.modal-sm .modal-content {
+  background: #FFF;
+  border: 1px solid #ddd;
+  border: 1px solid rgba(0, 0, 0, .2);
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+  padding: 10px 20px 10px 20px;
+}
+
+.close {
+  color: #000;
+}
+
+@media (min-width: 992px) {
+  .modal-md {
+    width: 600px;
+  }
+}
+
+.btn-popup {
+  display: inline-block;
+  margin-left: 5rem;
+  margin-top: -10px;
+}
+
+.popup-youtube {
+  position: relative;
+}
+
+.pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--main-green-color);
+  width: 70px;
+  height: 70px;
+  color: #FFF;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 73px;
+  font-size: 30px;
+  transform: translate(-50%, -50%);
+  padding-left: 4px;
+}
+
+.pulse::before,
+.pulse::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--main-yellow-color);
+  top: -15px;
+  right: -15px;
+  left: -15px;
+  bottom: -15px;
+  animation: pulse 1.5s linear infinite;
+}
+
+.pulse::after {
+  animation-delay: .5s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/*====================================================
+    10. MEDIA QUERIES.
+  ====================================================*/    
+@media (max-width:1200px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
+@media (max-width:992px) {
+  .button {
+    padding: 6px 26px;
+    font-size: 1rem;
+  }
+
+  .col-mt-lg {
+    margin-top: var(--lg-margin-top);
+  }
+
+  .col-lg-m {
+    margin-top: var(--col-lg-m);
+    margin-bottom: var(--col-lg-m);
+  }
+
+  .order-md-6 {
+      -ms-flex-order: 6;
+      order: 6;
+  }
+      
+}
+
+@media (max-width:991px) {
+  .order-first {
+    -ms-flex-order: -1;
+    order: -1;
+  }
+
+  .order-last {
+    -ms-flex-order: 13;
+    order: 13;
+  }
+      
+  .order-md-12 {
+      -ms-flex-order: 6;
+      order: 6;
+  }
+      
+  .order-first {
+    -ms-flex-order: -1;
+    order: -1;
+  }
+
+  .order-last {
+    -ms-flex-order: 13;
+    order: 13;
+  }
+    
+}
+
+@media (max-width:767px) {
+  .button {
+    padding: 5px 22px;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .col-mt-md {
+    margin-top: var(--md-margin-top);
+  }
+
+  .col-md-m {
+    margin-top: var(--col-md-m);
+    margin-bottom: var(--col-md-m);
+  }
+
+}
+
+@media (max-width:576px) {
+  .button {
+    padding: 5px 18px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .col-mt-sm {
+    margin-top: var(--sm-margin-top);
+  }
+
+}

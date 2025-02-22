@@ -1,0 +1,71 @@
+{% extends 'base/base-c.html' %}
+
+{% block main %}
+<div class="pages-hero">
+    <div class="container">
+        <div class="pages-title">
+            <h1> </h1>
+            <div class="page-nav">
+                <p> </p>
+            </div>
+        </div>
+    </div>  
+</div>
+
+<!-- CONTENT START -->
+<section>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <!-- BLOG CONTENT START --> 
+            <div class="col-lg-9">
+                
+                <div class="blog-content">
+                    <figure class="blog-feature-img">
+                        <img src="images/common/blog-feature.jpg" alt="">
+                        <div class="blog-caption-box">
+                            <div class="blog-caption-content">
+                                <h2>{{ query.text }}</h2>
+                                <div class="media"> 
+                                    <div class="media-body"> 
+                                      <h5 class="mt-0">BY <span class="color-text"><a href="#">{{ user.name }}</a></span> &nbsp;|&nbsp; {{ query.time.strftime('%B %d, %Y') }}</h5> 
+                                    </div> 
+                                  </div>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+
+                <div class="blog-comments">
+
+                    {% for ans in query.answers %}
+                        <div class="comment-box">
+                            <div class="media">
+                                
+                                <div class="media-body">
+                                    <h5 class="mt-0">{{ ans.name }}</h5>
+                                    <p>
+                                        <strong>
+                                        {{ ans.time.strftime('%B %d, %Y %H:%M') }}
+                                        </strong>
+                                    </p>
+                                    <p>{{ ans.text }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+                {% if session['name'] %}
+                    <a href="/add-replay?qid={{ query.id }}" class="btn button">replay</a>
+                {% else %}
+                    <a href="/login">login</a> to give reply
+                {% endif %}
+            </div>
+            <!-- BLOG CONTENT END --> 
+        </div>
+    </div> 
+</section> 
+<!-- CONTENT END -->
+
+{% endblock main %}

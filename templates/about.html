@@ -1,0 +1,133 @@
+{% extends 'base/base.html' %}
+
+{% block main %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>About Us</h1>
+                <div class="page-nav">
+                    <p><a href="{{ url_for('main.index') }}">Home</a> &nbsp; | &nbsp; <a href="#">About Us</a></p>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <section>
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-lg-5">
+                    <figure class="Cropify-about-img">
+                        <img src="https://w0.peakpx.com/wallpaper/799/204/HD-wallpaper-farmers-agriculture-field-harvesting-farm-farmer-hard-working-workers-cultivation.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="col-lg-7 col-mt-lg">
+                    <div class="about-Cropify-info">
+                        <h5>About Cropify</h5>
+                        <h2>Abstract<br /></h2>
+                        <p>In an era where sustainable agriculture is paramount, our Cropify project stands at the forefront of innovation, offering farmers a comprehensive and user-friendly solution for efficient crop management. Leveraging cutting-edge technology and data-driven insights, our project encompasses three core functionalities to maximize agricultural productivity while minimizing environmental impact. </p>
+                        <!-- <p>Customized advice to smallholder farmers with radical efficiency and scalability agricultural
+                            methods used. Curabitur mollis bibendum luctus.
+                            Duis suscipit vitae dui sed suscipit. Vestibulum auctor nunc vitae diam</p>
+                        <figure class="signature">
+                            <img src="static/images/common/signature.png" alt="">
+                        </figure> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ws-services mt-5 mb-5">
+            <div class="row">
+                <div class="col-lg-5 ws-left-layer">
+                    
+                </div>
+                <div class="col-lg-7 ws-right-layer">
+                    <div class="inner-ws-right">
+                        <div class="layer-box">
+                            <div class="media">
+                                <img src="static/images/icons/farmer.svg" class="mr-3" alt="...">
+                                <div class="media-body">
+                                <h4 class="mt-0">Industry Oriented</h4>
+                                <p>Enabling Ecosystem for Food and Agriculture through Digital Innovation at the World Summit.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layer-box">
+                            <div class="media">
+                                <img src="static/images/icons/fruits.svg" class="mr-3" alt="...">
+                                <div class="media-body">
+                                <h4 class="mt-0">Fresh Vegetables</h4>
+                                <p>The mission of Cropify is to facilitate the discussion on the adoption and use digital innovations..</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layer-box">
+                            <div class="media">
+                                <img src="static/images/icons/agronomy.svg" class="mr-3" alt="...">
+                                <div class="media-body">
+                                <h4 class="mt-0">We are Passionate</h4>
+                                <p>Latest analysis by the Cadre Harmonisé indicates an increase in acute food insecurity of more than percent..</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layer-box">
+                            <div class="media">
+                                <img src="static/images/icons/wheat.svg" class="mr-3" alt="...">
+                                <div class="media-body">
+                                <h4 class="mt-0">Natural Products</h4>
+                                <p>The Food and Agriculture Organization’s Food Price Index averaged 94.2 points in July, a 1.2 percent increase..</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <div class="container mt-5 mb-5">
+            <div class="layer-title">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="lt-leftside">
+                            <h2>Meet  <br /><span class="light-text">Our Team</span></h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="lt-rightside">
+                            <p>We specialise in intelligent & effective Search and believes in the power of partnerships to grow business. We use agronomic machine learning, remote sensing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+
+        <div class="cta-counter mt-5 mb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="cta-content">
+                            <h3>The Precision  <br /><span class="light-text">agriculture </span></h3>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="cta-btn">
+                            <a href="#" class="btn button">Contact Us</a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="careers-parallax mt-5">
+            <div class="container">
+                <div class="cp-bg-layer">
+                    <div class="cp-content">
+                        <h3>The Spirit  <br /><span class="light-text">of Innovation </span></h3>
+                        <p>If you are looking for a fun, challenging, fast-paced work environment with growth opportunities, come join our incredible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock main %}

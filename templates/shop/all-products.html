@@ -1,0 +1,50 @@
+{% extends 'base/base-c.html' %}
+
+{% block main %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Products</h1>
+                <div class="page-nav">
+                    <p><a href="{{ url_for('main.index') }}">Home</a> &nbsp; | &nbsp; <a href="#">Products</a></p>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <div class="wrapper-form bg-light">
+        <div class="container-fluid px-5">
+            <div class="d-flex justify-content-between ">
+                <h3>All Products</h3>
+                {% if session['id'] %}
+                    <div class="ms-auto">
+                        <a href="/orders" class="btn button">My Orders</a>
+                        <a href="{{ url_for('shop.add_product') }}" class="btn button">Add Product</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="container-fluid">
+
+            <div class="d-flex flex-wrap justify-content-center ">
+
+                {% for product in products %}
+                    <div class="card m-3" style="width: 350px;">
+                        <img height="300px" src="{{ product.img_url }}" alt="">
+                        <div class="card-body">
+                            <h3 class="fs-3" style="font-weight: 900;" >{{ product.name }}</h3>
+                            <p>{{ product.description }}</p>
+                            <div class="d-flex justify-content-between ">
+                                <span class="fw-bold pt-2 " style="font-weight: 700;">Price: {{ product.price }} /-</span>
+                                {% if session['name'] %}
+                                    <a href="/buy-product?pid={{ product.id }}" class="btn button">Buy Now</a>
+                                
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock main %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+	
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+            <title>Cropify </title>
+            <meta name="description" content="Modern HTML Template ideal for business like agriculture, vegetables and organic food.">
+            <meta name="keywords" content="agriculture, eco, farm, food, Fresh Fruit, fruits, healthy food, landscape, organic, organic food, products, vegetables">
+            
+            <link rel="stylesheet" href="static/fonts/css/all.min.css">  
+    
+            <link rel="shortcut icon" href="static/images/icons/favicon.png">
+
+            <link rel="stylesheet" href="static/css/lib/bootstrap.min.css">
+            <link rel="stylesheet" href="static/css/lib/slick.min.css"> 
+            <link rel="stylesheet" href="static/css/lib/owl.carousel.min.css">
+            <link rel='stylesheet' href="static/css/lib/flickity.min.css">
+            <link rel='stylesheet' href="static/css/lib/magnific-popup.min.css">
+            <link rel='stylesheet' href="static/css/lib/aos.min.css">
+            <link rel='stylesheet' href="static/css/lib/navbar.css">
+            <link rel="stylesheet" href="static/css/animate.min.css"/>
+
+            <link rel="stylesheet" href="static/css/main.css">
+            <link rel="stylesheet" href="static/css/stylesheet.css">
+            <link rel="stylesheet" href="static/css/responsive.css">
+
+            <script src="static/js/modernizr-custom.js"></script>
+            {% block styles %} {% endblock styles %}
+
+    </head>
+    
+    <body>
+
+        <div class="google_element">
+            {% include 'includes/loader.html' %}
+            
+            {% include 'includes/header.html' %}
+            {% block main %} {% endblock main %}
+            
+            {% include 'includes/footer.html' %}
+            
+            <a href="#0" class="cd-top">Top</a>
+            {% include 'includes/scripts.html' %}
+            {% block scripts %} {% endblock scripts %}
+        </div>
+        
+    </body>
+    
+</html>
